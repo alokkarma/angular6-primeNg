@@ -1,0 +1,36 @@
+
+<div class="row" style="height:1px;">
+    <div class="load-bar" *ngIf="loading">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+</div>
+<div *ngIf="data" class="row">
+  <div class="col-md-12">
+    <p-table [value]="data.hits.hits">
+      <ng-template pTemplate="header">
+          <tr>
+              <th style="width:400px;">Test Path</th>
+              <th>Test Name</th>
+              <th>Test Owner</th>
+              <!-- <th>Start Time</th>
+              <th>End Time</th> -->
+              <th>No. of Tasks</th>
+              <!-- <th>Task List</th> -->
+              <th>Status</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-test>
+          <tr>
+              <td><a class="suiteId">{{test._source.TEST_PATH}}</a></td>
+              
+              <td>{{test._source.TEST_NAME}}</td>
+              <td>{{test._source.TEST_OWNER}}</td>
+              <td>3</td>
+              <td>{{test._source.TEST_STATUS}}</td>
+          </tr>
+      </ng-template>
+  </p-table>  
+  </div>
+</div>

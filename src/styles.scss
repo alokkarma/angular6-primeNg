@@ -1,1 +1,348 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../node_modules/primeng/resources/primeng.min.css';
+@import '../node_modules/primeng/resources/themes/omega/theme.css';
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '../node_modules/font-awesome/css/font-awesome.min.css';
+
+
+html, body {
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    background-color: #fefefe;
+    font-size: 14px;
+    color: #212529;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.preHeader {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 60px;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    background-image: -webkit-linear-gradient(to right, #1e469a, #49a7c1);
+    background-image: -moz-linear-gradient(to right, #1e469a, #49a7c1);
+    background-image: -ms-linear-gradient(to right, #1e469a, #49a7c1);
+    background-image: -o-linear-gradient(to right, #1e469a, #49a7c1);
+    background-image: linear-gradient(to right, #1e469a, #49a7c1);
+}
+.contentArea{
+     margin-left: 235px;
+     margin-top:60px;
+     min-height: calc(100vh - 135px);
+     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+     background-color: #f8f8f8;
+}
+.contentArea .row{
+    margin: 15px 0;
+}
+.top-right{
+    float:right; 
+    height:60px;
+}
+.top-left{
+    float:left;
+     width: 235px; 
+     height:60px; 
+     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.26);
+    letter-spacing: 5px;
+    color: white;
+    font-size: 30px; 
+    font-weight: bold; 
+    padding: 10px;
+}
+.hideShowArrow{
+    cursor: pointer;
+    position: absolute;
+    left: 220px;
+    transition: all .4s ease;
+}
+.side-nav {
+    position: fixed;
+    width: 236px;
+    height: 100vh;
+    margin-left: 0;
+    background-color: #ffffff;
+    z-index:1;
+    box-sizing: border-box;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); 
+    
+}
+.side-nav ul{
+    margin:0;
+    padding:0;
+    margin-bottom: 20px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.side-nav ul li {
+    padding: 10px 0;
+    position:relative;
+    border-left: 4px solid transparent;
+}
+.side-nav ul li:hover {
+    cursor: pointer;
+     background-color: #f0efef;
+     border-left: 4px solid #5691c8;
+     transition: all .4s;
+}
+.side-nav ul li.active{
+     background-color: #f0efef;
+     border-left: 4px solid #5691c8;
+}
+.side-nav ul li a{
+    font-size: 14px;
+    color:rgb(80, 78, 78);
+    text-decoration: none;
+}
+.side-nav ul li a span{
+    display: inline-block;
+    margin-left:10px;
+}
+.side-nav ul li + ul {
+    opacity:0;
+    margin: 0;
+    list-style: none;
+    max-height: 0;
+    overflow: hidden;
+    -moz-transition:all .4s ease;
+    -webkit-transition:all .4s ease;
+    transition: all .4s ease;
+}
+.side-nav ul li.active + ul {
+    padding: 0 0 0 15px;
+    list-style: none;
+    opacity:1;
+    max-height: 500px;
+    -moz-transition:all .4s ease;
+    -webkit-transition:all .4s ease;
+    transition: all .4s ease;
+}
+.userProfile{
+    width:100%; 
+    height:60px; 
+    padding: 8px 16px 8px 8px;
+}
+.chip {
+    font-size: 14px;
+    color: #fff;
+}
+.chip img {
+    padding: 4px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.footer{
+    margin-left:236px;
+    color:#fff;
+    padding:15px;
+    margin-top: 15px;
+    background-image: -webkit-linear-gradient(to left, #1e469a, #49a7c1);
+    background-image: -moz-linear-gradient(to left, #1e469a, #49a7c1);
+    background-image: -ms-linear-gradient(to left, #1e469a, #49a7c1);
+    background-image: -o-linear-gradient(to left, #1e469a, #49a7c1);
+    background-image: linear-gradient(to left, #1e469a, #49a7c1);
+}
+.style1{
+    margin-left:-236px;
+    transition: all .4s ease-in-out; 
+}
+.style2{
+    margin-left:0;
+    transition: all .4s ease-in-out; 
+}
+.style3{
+    margin-left:235px;
+    transition: all .4s ease-in-out; 
+}
+.rotate2 {
+    transition: all .4s ease;
+	-webkit-transform: rotateY(-180deg);
+	-moz-transform: rotateY(-180deg);
+	-o-transform: rotateY(-180deg);
+	transform: rotateY(-180deg);
+}
+.subMenuIcon{
+    float:right;
+    margin-right:50px;
+    color:#49a7c1;
+}
+li.active .subMenuIcon{
+    transition: all .4s ease;
+	-webkit-transform: rotateX(-180deg);
+	-moz-transform: rotateX(-180deg);
+	-o-transform: rotateX(-180deg);
+	transform: rotateX(-180deg);
+}
+.suiteId{
+    word-wrap:break-word;
+}
+.load-bar {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 4px;
+    background-color: #fdba2c;
+    z-index: 100;
+    left: 0;
+  }
+  .bar {
+    content: "";
+    display: inline;
+    position: absolute;
+    width: 0;
+    height: 100%;
+    left: 50%;
+    text-align: center;
+  }
+  .bar:nth-child(1) {
+    background-color: #da4733;
+    animation: loading 3s linear infinite;
+  }
+  .bar:nth-child(2) {
+    background-color: #3b78e7;
+    animation: loading 3s linear 1s infinite;
+  }
+  .bar:nth-child(3) {
+    background-color: #fdba2c;
+    animation: loading 3s linear 2s infinite;
+  }
+  @keyframes loading {
+      from {left: 50%; width: 0;z-index:100;}
+      33.3333% {left: 0; width: 100%;z-index: 10;}
+      to {left: 0; width: 100%;}
+  }
+
+  .customInput{
+      border:none;
+      width:80%;
+      padding: 5px 0 5px 20px;
+      border-bottom: 1px solid rgb(201, 199, 199);
+      color: #666;
+      font-size: 14px;
+      /* font-weight: bold; */
+      letter-spacing: 1px;
+  }
+  .customInput:focus{
+    outline: none;
+    border-bottom: 1px solid #49a7c1;
+    transition: all .5s ease-in-out;
+  }
+  .searchButton{
+      outline:none;
+      border:none;
+      color: #fff;
+      padding: 6px 12px  6px 12px;
+      background-color: #49a7c1;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+  }
+  .customProduct{
+    padding: 2px 4px 2px 4px;
+    background-color: #eee;
+    border-radius: 3px;
+    margin:1px;
+    width:90%;
+    color: #333; 
+    font-weight: bold;
+  }
+  
+  .testSummary{
+    padding: .24rem 1.14rem;
+    font-size: .81rem;
+    margin: .375rem;
+    border: 0;
+    border-radius: .125rem;
+    text-transform: uppercase;
+    white-space: normal;
+    color: #fff;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+  }
+  .ribbon{
+    background:#a6c;
+    height: 30px;
+    width:auto;
+    display: inline-block;
+    position: relative;
+    color:#FFF;
+    font-weight: bold;
+    line-height: 30px;
+    padding:0px 20px;
+    
+  }
+  
+  .ribbon:after{
+    content:"";
+    height:0;
+    width: 0;
+    top:0px;
+    right:-30px;
+    position: absolute;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 30px solid #a6c;
+  }
+  
+  .ribbon:before{
+    content:"";
+    height:0;
+    width: 0;
+    top:0px;
+    right:-30px;
+    position: absolute;
+    border-style: solid;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 30px solid #a6c;
+  }  
+  .masthead {
+    padding: -15px;
+    position: relative;
+    background-color: #343a40;
+    background: url("assets/image/him.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+    min-height: 100px;
+    position:relative;
+    border-radius: 4px;
+}
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    
+}
+.card-container {
+    padding: 2px 16px; 
+}
+.cardLink{
+    position: absolute;
+    padding:5px;
+    width:100%;
+    bottom:0;
+    text-align: center;
+    background-color: #54689f;
+    cursor: pointer;
+}
+.cardLink a{
+    text-decoration: none;
+    color: #fff;
+}
+.muted{
+    color: #999;
+    font-size: 12px;
+    font-style: italic;
+    font-weight:bold;
+}
+  

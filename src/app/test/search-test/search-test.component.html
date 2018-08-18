@@ -1,0 +1,62 @@
+<div class="row" style="height:1px;">
+        <div class="load-bar" *ngIf="loading">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+    </div>
+<div class="row" style="margin-top:15px;">
+        <div class="col-md-9">
+            <i class="fa fa-search"></i>
+                <input type=text [(ngModel)] = "testKey" placeholder="Enter Test Id to Search..." class="customInput">  
+                <button (click)="searchTest(testKey)" class="searchButton">Search</button>
+        </div>
+        <div class="col-md-9">
+        <span class="muted">Example: _proj_xdb_windows_setup_kafka_rdi_2018-07-16_yoda_tcRepo_test_02_test_02_lnx64_run1_demo_g0019</span>        
+        </div>     
+ </div>
+ <div *ngIf="data._id" style="color:#777; letter-spacing: 1px;">
+        <div class="row">   
+            <div class="ribbon">
+                  Test Detail      
+            </div>
+        </div>
+<div class="row">        
+<div class="col-md-6">
+    <div class="col-md-3">
+        <span style="padding: 8px; background-color: #9189fd; color: #fff; border-radius: 2px;"> Test Owner</span>
+    </div>
+    <div class="col-md-3">
+            <span style="padding: 8px; background-color: #ffbf79; color: #fff;border-radius: 2px;">{{data._source.TEST_OWNER}}</span>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="col-md-3">
+            <span style="padding: 8px; background-color: #8dc8ff;color: #fff;border-radius: 2px;">Test Status</span>
+    </div>
+    <div class="col-md-3">
+            <span style="padding: 8px; background-color: #f790c8; color: #fff;border-radius: 2px;">{{data._source.TEST_STATUS }}</span>
+    </div>    
+</div>
+</div>
+<div class="col-md-12">   
+    <table class="table table-striped">
+            <tr>
+                <td>Test Key</td><td>{{data._source.TEST_KEY}}</td>
+            </tr>
+            <tr>
+                <td>Suite Key</td><td>{{data._source.SUITE_KEY}}</td>
+            </tr>
+            <tr><td>Test Path</td><td>{{data._source.TEST_PATH}}</td></tr>
+            <tr><td>Test Name</td><td>{{data._source.TEST_NAME}}</td></tr>
+            <tr><td>Test OS Version</td><td>{{data._source.TEST_OS_VERSION}}</td></tr>
+            <tr><td>Test OS Type</td><td>{{data._source.TEST_OS_TYPE}}</td></tr>
+            <tr><td>Platform</td><td>{{data._source.PLATFORM}}</td></tr>        
+    </table>
+    
+</div>
+<div class="col-md-12">
+        <span class="productHeading">TASK LIST</span> : 
+        <span *ngFor="let task of data._source.TASK_LIST" class="customProduct"> {{task}}</span>
+    </div> 
+</div>        

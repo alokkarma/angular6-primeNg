@@ -1,0 +1,52 @@
+<div class="row">
+      <div class="summaryHeading">SUITE</div>
+  <div class="col-md-4" style="padding:2px 5px">
+            <div class="summaryGraph">  <p-chart #chart type="bar" [data]="data"></p-chart>
+            </div>
+  </div>
+  <div class="col-md-4" style="padding: 2px 5px;">
+    <div class="summaryGraph"> 
+        <p-chart type="line" [data]="data3" (onDataSelect)="selectData($event)"></p-chart>
+    </div>
+  </div>
+ 
+
+  <div class="col-md-4" style="padding: 2px 5px;">
+      <div class="summaryGraph"> 
+            <p-chart type="pie" [data]="data2" [options]="options"></p-chart>
+      </div>
+    </div>
+</div>
+<div class="row">
+            <div class="summaryHeading">TEST</div>
+        <div class="col-md-4" style="padding:2px 5px">
+                  <div class="summaryGraph">  <p-chart type="bar" [data]="data4"></p-chart>
+                  </div>
+        </div>
+        <div class="col-md-4" style="padding: 2px 5px;">
+          <div class="summaryGraph"> 
+              <p-chart type="line" [data]="data5" (onDataSelect)="selectData($event)"></p-chart>
+          </div>
+        </div>
+       
+      
+        <div class="col-md-4" style="padding: 2px 5px;">
+            <div class="summaryGraph"> 
+                  <p-chart type="pie" [data]="data6" [options]="options1"></p-chart>
+            </div>
+          </div>
+</div>
+  <div class="row">
+            <div class="summaryHeading">TASK</div>
+    <div class="col-md-4" style="padding:2px 5px">
+              <div class="summaryGraph">
+                    
+                    <p-chart type="bar" [data]="data7"></p-chart>
+              </div>
+    </div>
+    <div class="col-md-4" style="padding: 2px 5px;">
+      <div class="summaryGraph">
+           <p-chart type="pie" [data]="data8"></p-chart></div>
+    </div>
+    </div> 
+

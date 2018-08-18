@@ -1,0 +1,7 @@
+{
+    "/elastic/*":{
+        "target":"http://elastic:9200",
+        "secure":false,
+        "logLevel":"debug"
+    }
+}
