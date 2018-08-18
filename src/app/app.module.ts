@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { ExpandMenu } from './shared/directive/expand-menu.directive';
 import { ChartModule } from 'primeng/chart';
 import {CardModule} from 'primeng/card';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {CardModule} from 'primeng/card';
     FooterComponent,
     HomeComponent,
     SideNavbarComponent,
-    ExpandMenu
+    ExpandMenu,
+    AboutComponent
   ],
   imports: [
     HttpModule,
