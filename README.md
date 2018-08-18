@@ -1,6 +1,6 @@
 # Angular primeng sass project
 
-# create SASS project using commond: ng new my-sassy-app --style=scss
+
 
 Do -- npm install
 
@@ -29,3 +29,5 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+helpful command create SASS project from scratch using commond: ng new my-sassy-app --style=scss
