@@ -1,6 +1,6 @@
 # Angular primeng sass project
 
- npm install
+ npm install \
  npm start
 
 ## Development server
