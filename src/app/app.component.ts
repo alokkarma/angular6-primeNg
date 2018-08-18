@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { SuiteService } from './shared/service/suite.services';
 
 const URL = "/suite1/only_suite1/_search";
 @Component({
@@ -10,7 +9,7 @@ const URL = "/suite1/only_suite1/_search";
 export class AppComponent{
   title = 'App';
   public data ;
-  constructor(private suiteService: SuiteService){}
+  constructor(){}
 
   isSideNavOpen:boolean = true;
 

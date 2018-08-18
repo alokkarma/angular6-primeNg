@@ -5,11 +5,11 @@ import { map } from 'rxjs/operators';
 @Injectable({
     providedIn: 'root',
   })
-export class SuiteService {
+export class DataService {
     constructor(private http : Http){
 
     }
-    getSuites(URL:string){
+    getData(URL:string){
         console.log("inside get suites");
         return this.http.get(URL)
         .pipe(map(
@@ -19,7 +19,7 @@ export class SuiteService {
             }
         ));
     }
-    searchSuiteById(url:string){
+    searchDataById(url:string){
         console.log(url);
         return this.http.get(url)
         .pipe(map(
@@ -29,7 +29,7 @@ export class SuiteService {
             }
         ));
     }
-    getSummaryResult(url:string, data:any){
+    postData(url:string, data:any){
         return this.http.post(url, data)
         .pipe(map(
             (response: Response) => {
