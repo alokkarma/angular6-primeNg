@@ -10,6 +10,6 @@ export class HomeComponent{
     
     login() {
         console.log("Inisde login");
-        this.router.navigateByUrl('/summary');
+        this.router.navigateByUrl('/about');
     }
 }
