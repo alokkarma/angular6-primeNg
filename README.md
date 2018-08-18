@@ -7,6 +7,10 @@
 
 Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Run as a proxy 
+  create proxy.config.json and update package.json like below:\
+  "start": "ng serve --proxy-config proxy.config.json"
+ 
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
