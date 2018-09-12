@@ -16,7 +16,8 @@ import { ExpandMenu } from './shared/directive/expand-menu.directive';
 import { ChartModule } from 'primeng/chart';
 import {CardModule} from 'primeng/card';
 import { AboutComponent } from './about/about.component';
-
+import {TerminalModule} from 'primeng/terminal';
+import {EditorModule} from 'primeng/editor';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,9 @@ import { AboutComponent } from './about/about.component';
     ScrollPanelModule,
     ProgressBarModule,
     AppRoutingModule,
-    CardModule
+    CardModule,
+    TerminalModule,
+    EditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

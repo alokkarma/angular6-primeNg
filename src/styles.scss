@@ -22,11 +22,11 @@ html, body {
     -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
     -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-    background-image: -webkit-linear-gradient(to right, #1e469a, #49a7c1);
-    background-image: -moz-linear-gradient(to right, #1e469a, #49a7c1);
-    background-image: -ms-linear-gradient(to right, #1e469a, #49a7c1);
-    background-image: -o-linear-gradient(to right, #1e469a, #49a7c1);
-    background-image: linear-gradient(to right, #1e469a, #49a7c1);
+    background-image: -webkit-linear-gradient(to right, #517fa4, #243949);
+    background-image: -moz-linear-gradient(to right, #517fa4, #243949);
+    background-image: -ms-linear-gradient(to right, #517fa4, #243949);
+    background-image: linear-gradient(to right, #517fa4, #243949);
+    background-image: -o-linear-gradient(to right, #517fa4, #243949);
 }
 .contentArea{
      margin-left: 235px;
@@ -303,7 +303,6 @@ li.active .subMenuIcon{
     padding: -15px;
     position: relative;
     background-color: #343a40;
-    background: url("assets/image/him.jpg") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
