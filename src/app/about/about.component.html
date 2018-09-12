@@ -1,5 +1,9 @@
 <p-terminal welcomeMessage="Welcome to PrimeNG" prompt="primeng $"></p-terminal>
 
+<p-editor [(ngModel)]="text1" [style]="{'height':'320px'}"></p-editor>
+<p>Value: {{text1||'empty'}}</p>
+
+
 <div class="col-md-6" style="margin-top:15px;">
 
         <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="vertical" 
