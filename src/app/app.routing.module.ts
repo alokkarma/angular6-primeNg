@@ -4,7 +4,7 @@ import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
 const appRoutes: Routes =[
     { path: '', redirectTo: '/login', pathMatch: 'full' },
-    { path: 'login', component: HomeComponent },
+    { path: 'login', component: AboutComponent },
     { path: 'about', component: AboutComponent }
 ];
 
