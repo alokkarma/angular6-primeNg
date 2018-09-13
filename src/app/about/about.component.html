@@ -1,3 +1,8 @@
+<div class="p-grid">
+    <div class="p-col-2">1</div>
+    <div class="p-col-2">2</div>
+    <div class="p-col-2">3</div>
+</div>
 <div class="row">
     <div class="row">
         Terminal
@@ -8,8 +13,11 @@
         <div class="row">
                 Editor
             </div>
-<p-editor [(ngModel)]="text1" [style]="{'height':'320px'}"></p-editor>
-<p>Value: {{text1||'empty'}}</p>
+            <p-editor [(ngModel)]="text" ngDefaultControl></p-editor>
+    <form [formGroup]="user">
+    <p-editor formControlName="name" [style]="{'height':'320px'}" ngDefaultControl></p-editor>
+    <p>Value: {{text1||'empty'}}</p>
+</form>
 </div>
 <div class="row">
 <div class="col-md-6" style="margin-top:15px;">
