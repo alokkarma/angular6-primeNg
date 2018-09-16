@@ -19,6 +19,7 @@ import {CardModule} from 'primeng/card';
 import { AboutComponent } from './about/about.component';
 import {TerminalModule} from 'primeng/terminal';
 import {EditorModule} from 'primeng/editor';
+import { ChartExampleComponent } from './chart-example/chart-example.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {EditorModule} from 'primeng/editor';
     HomeComponent,
     SideNavbarComponent,
     ExpandMenu,
-    AboutComponent
+    AboutComponent,
+    ChartExampleComponent
   ],
   imports: [
     HttpModule,
