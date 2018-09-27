@@ -20,6 +20,9 @@ import { AboutComponent } from './about/about.component';
 import {TerminalModule} from 'primeng/terminal';
 import {EditorModule} from 'primeng/editor';
 import { ChartExampleComponent } from './chart-example/chart-example.component';
+import {InputSwitchModule} from 'primeng/inputswitch';
+import {ScheduleModule} from 'primeng/schedule';
+import {TabViewModule} from 'primeng/tabview';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,10 @@ import { ChartExampleComponent } from './chart-example/chart-example.component';
     AppRoutingModule,
     CardModule,
     TerminalModule,
-    EditorModule
+    EditorModule,
+    InputSwitchModule,
+    ScheduleModule,
+    TabViewModule
   ],
   providers: [],
   bootstrap: [AppComponent]
