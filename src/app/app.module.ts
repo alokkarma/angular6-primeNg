@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { FormsModule }   from '@angular/forms';
@@ -23,7 +24,7 @@ import { ChartExampleComponent } from './chart-example/chart-example.component';
 import {InputSwitchModule} from 'primeng/inputswitch';
 import {ScheduleModule} from 'primeng/schedule';
 import {TabViewModule} from 'primeng/tabview';
-
+import {AccordionModule} from 'primeng/accordion';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +40,7 @@ import {TabViewModule} from 'primeng/tabview';
     HttpModule,
     FormsModule,
     BrowserModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     ButtonModule,
     TableModule,
@@ -51,7 +53,9 @@ import {TabViewModule} from 'primeng/tabview';
     EditorModule,
     InputSwitchModule,
     ScheduleModule,
-    TabViewModule
+    TabViewModule,
+    AccordionModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
