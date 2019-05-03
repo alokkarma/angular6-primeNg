@@ -1,5 +1,10 @@
 <div class="p-grid">
   <div class="p-col-9">
+     <p-chart type="line" [data]="data" [options]="option1" (onDataSelect)="selectData($event)"></p-chart>
+  </div>
+</div>
+<div class="p-grid">
+  <div class="p-col-9">
     <!-- <p-chart type="bar" [data]="data" [options]="option1"></p-chart> -->
   </div>
   <div class="p-col-3">
@@ -7,11 +12,6 @@
       <p-inputSwitch (onChange)="handleChange($event)"></p-inputSwitch>
   </div>
 </div>
-<p-tabView>
-<p-tabPanel header="Header Text" [closable]="true">
-  Content 1
-</p-tabPanel>
-</p-tabView>
 <p-tabView [activeIndex]="index">
   <p-tabPanel [closable]="true" [header]="item.header" *ngFor="let item of items;">
       {{item.content}}
@@ -26,44 +26,6 @@
         </div>
   </p-header>
   </p-accordionTab>
-  <p-accordionTab header="Header 2">
-      Content 2
-  </p-accordionTab>
-  <p-accordionTab header="Header 3">
-      Content 3    
-  </p-accordionTab>
 </p-accordion>
-<div class="ui-g" style="width:250px;margin-bottom:10px">
-  <div class="ui-g-12 customeRadio">
-    <p-radioButton name="group1" value="Option 1" label="Option 1" [(ngModel)]="val1" inputId="opt1">
-    </p-radioButton><a href="">Option 1</a>
-  </div>
-  <div class="ui-g-12 customeRadio">
-    <p-radioButton name="group1" value="Option 2" label="Option 2" [(ngModel)]="val1" inputId="opt2">
-    </p-radioButton><a href="">Option 2</a>
-  </div>
-  <div class="ui-g-12 customeRadio">
-    <p-radioButton name="group1" value="Option 3" label="Option 3" [(ngModel)]="val1" inputId="opt3">
-    </p-radioButton><a href="">Option 2</a>
-  </div>
-</div>
-<p-radioButton name="groupname" value="val1" [(ngModel)]="selectedValue"></p-radioButton>
-<p-radioButton name="groupname" value="val2" [(ngModel)]="selectedValue"></p-radioButton>
-<button (click)="add()">Add Point!</button>
-    <!-- <div [chart]="chart"></div> -->
- 
-    <div class="p-grid">
-      <div class="p-col-9">
-         <p-chart type="line" [data]="data" [options]="option1" (onDataSelect)="selectData($event)"></p-chart>
-      </div>
-      <div class="p-col-3"><h3>Basic</h3>
-        <p-calendar [(ngModel)]="date1"></p-calendar>
-      </div>
-    </div>
-    <div class="p-grid">
-      <div class="p-col-9"> 
-        <p-calendar [(ngModel)]="date1" [style]="{'width':'70%'}" [inputStyle]="{'width':'70%'}" 
-        class="treetableDate"></p-calendar>
-      </div>
-    </div>
+   
 

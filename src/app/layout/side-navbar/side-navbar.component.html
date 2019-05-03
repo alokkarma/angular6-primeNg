@@ -21,6 +21,12 @@
 
                 </a>
             </li>
+            <li routerLinkActive="active">
+                <a routerLink="/table">
+                    <span>Prime Table</span>
+
+                </a>
+            </li>
             <li expandMenu>
                 <a>
                     <span><i class="fa fa-bar-chart"></i></span>
@@ -86,31 +92,6 @@
                     <a>
                         <span><i class="fa fa-bar-chart"></i></span>
                         <span>JQuery</span>
-                    </a>
-                </li>
-            </ul>
-        </ul>
-        <ul>
-            <li *ngFor="let menuItem of menuItems" routerLinkActive="active">
-                <a [routerLink]="[menuItem.path]">
-                    {{menuItem.title}}
-                </a>
-            </li>
-        </ul>
-        <ul>
-            <li expandMenu *ngFor="let group of hueGroups">
-                {{group.name}}
-                <ul>
-                    <li *ngFor="let light of group.lights">
-                        <a>{{light.name}}</a>
-                    </li>
-                </ul>
-            </li>
-            <ul>
-                <li>
-                    <a>
-                        <span><i class="fa fa-bar-chart"></i></span>
-                        <span>Bootstrap</span>
                     </a>
                 </li>
             </ul>

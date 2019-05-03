@@ -1,8 +1,3 @@
-<div class="p-grid">
-    <div class="p-col">1</div>
-    <div class="p-col">2</div>
-    <div class="p-col">3</div>
-</div>
 <div class="row">
     <div class="row">
         Terminal
@@ -14,7 +9,6 @@
                 Editor
             </div> 
     <p-editor #ed [style]="{'height':'320px'}" (onInit)="editorcall($event)"></p-editor>
-    <p>Value: {{text1||'empty'}}</p>
 </div>
 <h3>Content with Filters</h3>
 <p-dropdown [options]="cars" [(ngModel)]="selectedCar2" [style]="{'width':'300px'}" filter="true">
@@ -25,52 +19,6 @@
         </div>
     </ng-template>
 </p-dropdown>
-<h3>Multiple Row Selection</h3>
-<p-table #dd [columns]="cols" [value]="cars" selectionMode="multiple" [(selection)]="selectedCars2" [metaKeySelection]="true">
-    <ng-template pTemplate="caption">
-        <div style="text-align: right">        
-            <ul>
-                <li *ngFor="let car of selectedCars2" style="text-align: left">
-                    {{car.vin + ' - ' + car.brand + ' - ' + car.year + ' - ' + car.color}}
-                </li>
-            </ul>    
-        </div>
-    </ng-template>
-    <ng-template pTemplate="header" let-columns>
-        <tr>
-            <th *ngFor="let col of columns">
-                {{col.header}}
-            </th>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-rowData let-columns="columns" let-rowIndex="rowIndex">
-        <tr [pSelectableRow]="rowData" [pSelectableRowIndex]="rowIndex">
-            <td *ngFor="let col of columns">
-                {{rowData[col.field]}}
-            </td>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="summary">
-        
-    </ng-template>
-</p-table>
-<div class="row">
-<div class="col-md-6" style="margin-top:15px;">
-    
-        
-    <input type="text" pInputText placeholder="Username">  
-        <span style="margin-left:-20px;">
-            <button (click)="userclick(dd)" style="border:none; outline: none; position: relative; width:0;background-color: #fff;">
-                <i class="pi pi-times"></i>
-            </button>
-        </span>       
-
-    <span class="ui-float-label">
-        <input id="float-input" type="text" size="30" pInputText> 
-        <label for="float-input">Username</label>
-    </span>
-</div>
-</div>
 <div class="row">
     <div class="ui-g" style="width:250px;margin-bottom:10px">
         <div class="ui-g-12"><p-checkbox name="group1" value="New York" label="New York" [(ngModel)]="selectedCities" (onChange)="checkChange($event)" inputId="ny"></p-checkbox></div>

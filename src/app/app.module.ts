@@ -31,6 +31,7 @@ import {CalendarModule} from 'primeng/calendar';
 import {DropdownModule} from 'primeng/dropdown';
 import {InputTextModule} from 'primeng/inputtext';
 import {CheckboxModule} from 'primeng/checkbox';
+import { PrimeTableComponent } from './prime-table/prime-table.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import {CheckboxModule} from 'primeng/checkbox';
     SideNavbarComponent,
     ExpandMenu,
     AboutComponent,
-    ChartExampleComponent
+    ChartExampleComponent,
+    PrimeTableComponent
   ],
   imports: [
     HttpModule,
