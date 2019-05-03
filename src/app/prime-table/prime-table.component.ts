@@ -11,6 +11,7 @@ export class PrimeTableComponent implements OnInit {
   public isExpanded:boolean = false;
   public rows:number =10;
   public expandedRows = {};
+  public temDataLength:number = 0;
   constructor() { }
 
   ngOnInit() {
@@ -21,6 +22,8 @@ export class PrimeTableComponent implements OnInit {
       { field: 'color', header: 'Color' }
   ];
   this.cars = CARS;
+
+  this.cars.length < this.rows ? this.temDataLength = this.cars.length : this.temDataLength = this.rows;
   }
   expandAll() {
     if(!this.isExpanded){
@@ -34,7 +37,7 @@ export class PrimeTableComponent implements OnInit {
   }
   onRowExpand() {
     console.log("row expanded", Object.keys(this.expandedRows).length);
-    if(Object.keys(this.expandedRows).length === this.rows){
+    if(Object.keys(this.expandedRows).length === this.temDataLength){
       this.isExpanded = true;
     }
   }
@@ -45,7 +48,8 @@ export class PrimeTableComponent implements OnInit {
     }
   }
   onPage(event: any) {
-    console.log(event);
+    this.temDataLength = this.cars.slice(event.first, event.first + 10).length;
+    console.log(this.temDataLength);
     this.isExpanded = false;
     this.expandedRows={};
   }
