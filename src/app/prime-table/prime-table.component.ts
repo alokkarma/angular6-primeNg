@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class PrimeTableComponent implements OnInit {
   public cars:any[];
   public cols: any[];
+  public isExpanded:boolean = false;
+  public rows:number =10;
+  public expandedRows = {};
   constructor() { }
 
   ngOnInit() {
@@ -18,6 +21,33 @@ export class PrimeTableComponent implements OnInit {
       { field: 'color', header: 'Color' }
   ];
   this.cars = CARS;
+  }
+  expandAll() {
+    if(!this.isExpanded){
+      this.cars.forEach(data =>{
+        this.expandedRows[data.vin] = 1;
+      })
+    } else {
+      this.expandedRows={};
+    }
+    this.isExpanded = !this.isExpanded;
+  }
+  onRowExpand() {
+    console.log("row expanded", Object.keys(this.expandedRows).length);
+    if(Object.keys(this.expandedRows).length === this.rows){
+      this.isExpanded = true;
+    }
+  }
+  onRowCollapse() {
+    console.log("row collapsed",Object.keys(this.expandedRows).length);
+    if(Object.keys(this.expandedRows).length === 0){
+      this.isExpanded = false;
+    }
+  }
+  onPage(event: any) {
+    console.log(event);
+    this.isExpanded = false;
+    this.expandedRows={};
   }
 }
 const CARS = [
