@@ -38,6 +38,7 @@ html, body {
      min-height: calc(100vh - 135px);
      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
      background-color: #f8f8f8;
+     overflow: hidden;
 }
 .contentArea .row{
     margin: 15px 0;
@@ -348,4 +349,9 @@ li.active .subMenuIcon{
     font-style: italic;
     font-weight:bold;
 }
-  
+.treetableDate .ui-widget-content{
+    width: 80%;
+}
+.customeRadio label{
+    display:none;
+}

@@ -25,6 +25,12 @@ import {InputSwitchModule} from 'primeng/inputswitch';
 import {ScheduleModule} from 'primeng/schedule';
 import {TabViewModule} from 'primeng/tabview';
 import {AccordionModule} from 'primeng/accordion';
+import {RadioButtonModule} from 'primeng/radiobutton';
+//import { ChartModule } from 'angular-highcharts';
+import {CalendarModule} from 'primeng/calendar';
+import {DropdownModule} from 'primeng/dropdown';
+import {InputTextModule} from 'primeng/inputtext';
+import {CheckboxModule} from 'primeng/checkbox';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +60,12 @@ import {AccordionModule} from 'primeng/accordion';
     InputSwitchModule,
     ScheduleModule,
     TabViewModule,
-    AccordionModule
+    AccordionModule,
+    RadioButtonModule,
+    CalendarModule,
+    DropdownModule,
+    InputTextModule,
+    CheckboxModule
     
   ],
   providers: [],

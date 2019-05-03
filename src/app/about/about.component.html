@@ -13,14 +13,69 @@
         <div class="row">
                 Editor
             </div> 
-    <p-editor [style]="{'height':'320px'}"></p-editor>
+    <p-editor #ed [style]="{'height':'320px'}" (onInit)="editorcall($event)"></p-editor>
     <p>Value: {{text1||'empty'}}</p>
 </div>
+<h3>Content with Filters</h3>
+<p-dropdown [options]="cars" [(ngModel)]="selectedCar2" [style]="{'width':'300px'}" filter="true">
+    <ng-template let-car pTemplate="item">
+        <div class="ui-helper-clearfix" style="position: relative;height: 25px;">
+            <div style="width:100px;position:absolute;top:1px;left:5px">{{car.label}}</div>
+            <div style="font-size:14px;float:right;margin-top:4px">{{car.label}}</div>
+        </div>
+    </ng-template>
+</p-dropdown>
+<h3>Multiple Row Selection</h3>
+<p-table #dd [columns]="cols" [value]="cars" selectionMode="multiple" [(selection)]="selectedCars2" [metaKeySelection]="true">
+    <ng-template pTemplate="caption">
+        <div style="text-align: right">        
+            <ul>
+                <li *ngFor="let car of selectedCars2" style="text-align: left">
+                    {{car.vin + ' - ' + car.brand + ' - ' + car.year + ' - ' + car.color}}
+                </li>
+            </ul>    
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngFor="let col of columns">
+                {{col.header}}
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns" let-rowIndex="rowIndex">
+        <tr [pSelectableRow]="rowData" [pSelectableRowIndex]="rowIndex">
+            <td *ngFor="let col of columns">
+                {{rowData[col.field]}}
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+        
+    </ng-template>
+</p-table>
 <div class="row">
 <div class="col-md-6" style="margin-top:15px;">
+    
+        
+    <input type="text" pInputText placeholder="Username">  
+        <span style="margin-left:-20px;">
+            <button (click)="userclick(dd)" style="border:none; outline: none; position: relative; width:0;background-color: #fff;">
+                <i class="pi pi-times"></i>
+            </button>
+        </span>       
 
-        <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="vertical" 
-        data-theme="light" data-vanity="alok631">
-            <a class="LI-simple-link" href='https://in.linkedin.com/in/alok631?trk=profile-badge'>Alok vishwakarma</a></div>
+    <span class="ui-float-label">
+        <input id="float-input" type="text" size="30" pInputText> 
+        <label for="float-input">Username</label>
+    </span>
 </div>
 </div>
+<div class="row">
+    <div class="ui-g" style="width:250px;margin-bottom:10px">
+        <div class="ui-g-12"><p-checkbox name="group1" value="New York" label="New York" [(ngModel)]="selectedCities" (onChange)="checkChange($event)" inputId="ny"></p-checkbox></div>
+        <div class="ui-g-12"><p-checkbox name="group1" value="San Francisco" label="San Francisco" [(ngModel)]="selectedCities" (onChange)="checkChange($event)"  inputId="sf"></p-checkbox></div>
+        <div class="ui-g-12"><p-checkbox name="group1" value="Los Angeles" label="Los Angeles" [(ngModel)]="selectedCities" (onChange)="checkChange($event)"  inputId="la"></p-checkbox></div>
+    </div>
+</div>
+

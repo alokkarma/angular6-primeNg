@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Chart } from 'angular-highcharts';
+import { CheckboxModule } from 'primeng/checkbox';
 
 @Component({
     selector: 'app-chart-example',
@@ -6,11 +8,41 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./chart-example.component.scss']
 })
 export class ChartExampleComponent implements OnInit {
+    @ViewChild('ck') ck : CheckboxModule;
     items: any;
     index: any;
     data: any;
     option1: any;
+    value: Date;
     checked2: boolean = true;
+    selectedValue: string;
+    selectedCities: string[] = [];
+    chart = new Chart({
+        chart: {
+          type: 'line'
+        },
+        title: {
+          text: 'Linechart'
+        },
+        credits: {
+          enabled: false
+        },
+        series: [
+          {
+            name: 'Line 1',
+            data: [1, 2, 3,1,8,9,10,1,2,3,4,5,6,7,8,9,
+                1, 2, 3,1,8,9,10,1,2,3,4,5,6,7,8,9]
+          }
+        ]
+      });
+     
+      // add point to chart serie
+      add() {
+          for(var i=0; i<10;i++)
+          {
+        this.chart.addPoint(i);
+          }
+      }
     constructor() {
         this.data = {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -84,5 +116,13 @@ export class ChartExampleComponent implements OnInit {
             this.index = this.items.length - 1;
         }, 100);
     }
-
+    selectData(e:any){
+        console.log(e.dataset);
+        console.log(e.element);
+        console.log(e.element._datasetIndex);
+        console.log(e.element._index);
+    }
+    checkChange(e:any){
+        event.stopPropagation();
+    }
 }
