@@ -1,8 +1,24 @@
+<div class="row">
+        <read-more [text]="'This is custom read more component for show and hide extra details.'"
+        [textLength]="30">Terminal</read-more>
+    </div>
 <div class="p-grid" style="margin-top:15px; padding:10px;">
 <p-table [columns]="cols" [value]="cars" dataKey="vin" [paginator]="true"
 [rows]="10" [totalRecords]="cars.length" pageLinkSize="3" (onPage)="onPage($event)"
     (onRowExpand)="onRowExpand()" (onRowCollapse)="onRowCollapse()" 
     [expandedRowKeys]="expandedRows">
+  <ng-template pTemplate="header" let-columns >
+      <tr>
+          <th style="width: 3em">
+            <a style="cursor: pointer;font-size: 16px; color:teal;" (click)="expandAll()"><i
+              *ngIf="!isExpanded" class="fa fa-plus-circle" aria-hidden="true"></i>
+          <i *ngIf="isExpanded" class="fa fa-minus-circle" aria-hidden="true"></i></a>
+          </th>
+          <th *ngFor="let col of columns">
+              {{col.header}}
+          </th>
+      </tr>
+  </ng-template>
   <ng-template pTemplate="header" let-columns>
       <tr>
           <th style="width: 3em">
@@ -22,8 +38,9 @@
                   <i [ngClass]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
               </a>
           </td>
-          <td *ngFor="let col of columns">
-              {{rowData[col.field]}}
+          <td *ngFor="let col of columns" [ngSwitch]="col.field">
+                <div *ngSwitchCase="'color'"><read-more [text]="rowData[col.field]" [textLength]="20"></read-more></div>
+                <div *ngSwitchDefault>{{rowData[col.field]}}</div>
           </td>
       </tr>
   </ng-template>
@@ -31,7 +48,7 @@
       <tr>
           <td [attr.colspan]="columns.length + 1">
               <div class="ui-g ui-fluid" style="font-size:16px;padding:20px">
-                  <div class="ui-g-12 ui-md-9">
+                  <div class="ui-g-12 ui-md-12">
                       <div class="ui-g">
                           <div class="ui-g-3">
                               <b>Vin:</b> {{rowData.vin}}

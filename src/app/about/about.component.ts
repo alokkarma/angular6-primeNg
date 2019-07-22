@@ -21,7 +21,12 @@ export class AboutComponent implements OnInit {
               return false;
           }
     };
+    selectedCar2:string;
     selectedCities: string[] = [];
+    value: Date;
+    maxDateValue: Date;
+    minDateValue: Date;
+    
   constructor() { }
 
   ngOnInit() {
@@ -51,6 +56,13 @@ export class AboutComponent implements OnInit {
     { field: 'brand', header: 'Brand' },
     { field: 'color', header: 'Color' }
 ];
+   this.setMinMaxDate();
+     
+  }
+  setMinMaxDate() {
+    var nowdate = new Date();
+    this.maxDateValue = new Date(nowdate.getFullYear(), nowdate.getMonth() + 1, 0);
+    this.minDateValue = new Date(nowdate.getFullYear(), nowdate.getMonth() + 1, 0);
   }
   userclick(e:any){
     let element = e.tableViewChild.nativeElement.children[2].children;
@@ -66,5 +78,9 @@ export class AboutComponent implements OnInit {
   editorcall(event:any){
     event.editor.keyboard.bindings[9].length = 0;
     event.editor.keyboard.bindings[9].push(this.tab);
+  }
+  onMonthChange(e:any) {
+    this.minDateValue = new Date(e.year, e.month, 0);
+    this.maxDateValue = new Date(e.year, e.month, 0);
   }
 }

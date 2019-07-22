@@ -1,6 +1,7 @@
 <div class="row">
     <div class="row">
-        Terminal
+        <read-more [text]="'This is custom read more component for show and hide extra details.'"
+        [textLength]="20">Terminal</read-more>
     </div>
 <p-terminal welcomeMessage="Welcome to PrimeNG" prompt="primeng $"></p-terminal>
 </div>
@@ -11,13 +12,7 @@
     <p-editor #ed [style]="{'height':'320px'}" (onInit)="editorcall($event)"></p-editor>
 </div>
 <h3>Content with Filters</h3>
-<p-dropdown [options]="cars" [(ngModel)]="selectedCar2" [style]="{'width':'300px'}" filter="true">
-    <ng-template let-car pTemplate="item">
-        <div class="ui-helper-clearfix" style="position: relative;height: 25px;">
-            <div style="width:100px;position:absolute;top:1px;left:5px">{{car.label}}</div>
-            <div style="font-size:14px;float:right;margin-top:4px">{{car.label}}</div>
-        </div>
-    </ng-template>
+<p-dropdown [options]="cars" [(ngModel)]="selectedCar2" placeholder="None" [style]="{'width':'300px'}" >
 </p-dropdown>
 <div class="row">
     <div class="ui-g" style="width:250px;margin-bottom:10px">
@@ -26,4 +21,13 @@
         <div class="ui-g-12"><p-checkbox name="group1" value="Los Angeles" label="Los Angeles" [(ngModel)]="selectedCities" (onChange)="checkChange($event)"  inputId="la"></p-checkbox></div>
     </div>
 </div>
+<div class="ui-g-12 ui-md-4">
+    <h3>Disable Days</h3>
+    <p-calendar [(ngModel)]="value" tabindex="0" [maxDate]="maxDateValue" [minDate]="minDateValue" readonlyInput="true" (onMonthChange)="onMonthChange($event)"></p-calendar> {{date|date}}
+</div>
+<p-calendar [(ngModel)]="date10">
+    <ng-template pTemplate="value" let-date>
+        <span [ngStyle]="{opacity: (date.day < 21 && date.day > 10) ? '.2' : 'inherit'}" style="border-radius:50%">{{date.day}}</span>
+    </ng-template>
+</p-calendar>
 

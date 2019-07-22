@@ -27,11 +27,12 @@ import {TabViewModule} from 'primeng/tabview';
 import {AccordionModule} from 'primeng/accordion';
 import {RadioButtonModule} from 'primeng/radiobutton';
 //import { ChartModule } from 'angular-highcharts';
-import {CalendarModule} from 'primeng/calendar';
 import {DropdownModule} from 'primeng/dropdown';
 import {InputTextModule} from 'primeng/inputtext';
 import {CheckboxModule} from 'primeng/checkbox';
+import {CalendarModule} from 'primeng/calendar';
 import { PrimeTableComponent } from './prime-table/prime-table.component';
+import { ReadMoreComponent } from './read-more/read-more.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,8 @@ import { PrimeTableComponent } from './prime-table/prime-table.component';
     ExpandMenu,
     AboutComponent,
     ChartExampleComponent,
-    PrimeTableComponent
+    PrimeTableComponent,
+    ReadMoreComponent
   ],
   imports: [
     HttpModule,
@@ -64,11 +66,10 @@ import { PrimeTableComponent } from './prime-table/prime-table.component';
     TabViewModule,
     AccordionModule,
     RadioButtonModule,
-    CalendarModule,
     DropdownModule,
     InputTextModule,
-    CheckboxModule
-    
+    CheckboxModule,
+    CalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
