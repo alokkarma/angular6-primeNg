@@ -33,6 +33,8 @@ import {CheckboxModule} from 'primeng/checkbox';
 import {CalendarModule} from 'primeng/calendar';
 import { PrimeTableComponent } from './prime-table/prime-table.component';
 import { ReadMoreComponent } from './read-more/read-more.component';
+import { NgaReadMoreModule } from 'nga-read-more';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,12 +66,13 @@ import { ReadMoreComponent } from './read-more/read-more.component';
     InputSwitchModule,
     ScheduleModule,
     TabViewModule,
+    NgaReadMoreModule,
     AccordionModule,
     RadioButtonModule,
     DropdownModule,
     InputTextModule,
     CheckboxModule,
-    CalendarModule
+    CalendarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

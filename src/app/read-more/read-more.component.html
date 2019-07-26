@@ -1,7 +1,7 @@
 <div>
-  <span>{{text}}</span><a *ngIf="!showOnlyText" style="cursor:pointer" (click)="toggleLength()">
-  <span *ngIf="!hide else less">...more</span></a>
+  <span>{{text}}</span>
+  <a *ngIf="!showOnlyText" style="cursor:pointer" (click)="toggleLength()">
+    <span *ngIf="!hide">...more</span>
+    <span *ngIf="hide">less</span>
+  </a>
 </div>
-<ng-template #less>
-  less
-</ng-template>

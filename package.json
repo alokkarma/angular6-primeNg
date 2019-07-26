@@ -30,13 +30,12 @@
     "font-awesome": "^4.7.0",
     "fullcalendar": "^4.0.0-alpha.2",
     "highcharts": "^6.1.4",
+    "nga-read-more": "0.0.1",
     "primeflex": "^1.0.0-rc.1",
     "primeicons": "^1.0.0-beta.10",
     "primeng": "^6.0.0",
     "quill": "^1.3.6",
     "rxjs": "^6.0.0",
-    "tvmaze": "file:tvmaze-0.0.2.tgz",
-    "yoda": "file:yoda-0.0.0.tgz",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

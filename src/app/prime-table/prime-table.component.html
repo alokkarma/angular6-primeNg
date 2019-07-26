@@ -1,6 +1,6 @@
 <div class="row">
-        <read-more [text]="'This is custom read more component for show and hide extra details.'"
-        [textLength]="30">Terminal</read-more>
+        <nga-read-more [text]="'This is custom read more component for show and hide extra details.'"
+        [textLength]="30">Terminal</nga-read-more>
     </div>
 <div class="p-grid" style="margin-top:15px; padding:10px;">
 <p-table [columns]="cols" [value]="cars" dataKey="vin" [paginator]="true"
@@ -39,7 +39,7 @@
               </a>
           </td>
           <td *ngFor="let col of columns" [ngSwitch]="col.field">
-                <div *ngSwitchCase="'color'"><read-more [text]="rowData[col.field]" [textLength]="20"></read-more></div>
+                <div *ngSwitchCase="'color'"><nga-read-more [text]="rowData[col.field]" [textLength]="20"></nga-read-more></div>
                 <div *ngSwitchDefault>{{rowData[col.field]}}</div>
           </td>
       </tr>
