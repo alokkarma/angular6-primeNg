@@ -1,0 +1,31 @@
+<div class="p-grid">
+  <div class="p-col-9">
+     <p-chart type="line" [data]="data" [options]="option1" (onDataSelect)="selectData($event)"></p-chart>
+  </div>
+</div>
+<div class="p-grid">
+  <div class="p-col-9">
+    <!-- <p-chart type="bar" [data]="data" [options]="option1"></p-chart> -->
+  </div>
+  <div class="p-col-3">
+      
+      <p-inputSwitch (onChange)="handleChange($event)"></p-inputSwitch>
+  </div>
+</div>
+<p-tabView [activeIndex]="index">
+  <p-tabPanel [closable]="true" [header]="item.header" *ngFor="let item of items;">
+      {{item.content}}
+  </p-tabPanel>
+</p-tabView>
+<p-accordion>
+  <p-accordionTab>
+    <p-header>
+      <div class="ui-g" style="width:250px;margin-bottom:10px">
+        <div class="ui-g-12"><p-checkbox name="group1" #ck value="New York" label="New York" 
+          [(ngModel)]="selectedCities" (onChange)="checkChange()" inputId="ny"></p-checkbox></div>
+        </div>
+  </p-header>
+  </p-accordionTab>
+</p-accordion>
+   
+

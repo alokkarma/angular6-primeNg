@@ -1,12 +1,33 @@
+<div class="row">
+    <div class="row">
+        <read-more [text]="'This is custom read more component for show and hide extra details.'"
+        [textLength]="20">Terminal</read-more>
+    </div>
 <p-terminal welcomeMessage="Welcome to PrimeNG" prompt="primeng $"></p-terminal>
-
-<p-editor [(ngModel)]="text1" [style]="{'height':'320px'}"></p-editor>
-<p>Value: {{text1||'empty'}}</p>
-
-
-<div class="col-md-6" style="margin-top:15px;">
-
-        <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="vertical" 
-        data-theme="light" data-vanity="alok631">
-            <a class="LI-simple-link" href='https://in.linkedin.com/in/alok631?trk=profile-badge'>Alok vishwakarma</a></div>
 </div>
+<div class="row">
+        <div class="row">
+                Editor
+            </div> 
+    <p-editor #ed [style]="{'height':'320px'}" (onInit)="editorcall($event)"></p-editor>
+</div>
+<h3>Content with Filters</h3>
+<p-dropdown [options]="cars" [(ngModel)]="selectedCar2" placeholder="None" [style]="{'width':'300px'}" >
+</p-dropdown>
+<div class="row">
+    <div class="ui-g" style="width:250px;margin-bottom:10px">
+        <div class="ui-g-12"><p-checkbox name="group1" value="New York" label="New York" [(ngModel)]="selectedCities" (onChange)="checkChange($event)" inputId="ny"></p-checkbox></div>
+        <div class="ui-g-12"><p-checkbox name="group1" value="San Francisco" label="San Francisco" [(ngModel)]="selectedCities" (onChange)="checkChange($event)"  inputId="sf"></p-checkbox></div>
+        <div class="ui-g-12"><p-checkbox name="group1" value="Los Angeles" label="Los Angeles" [(ngModel)]="selectedCities" (onChange)="checkChange($event)"  inputId="la"></p-checkbox></div>
+    </div>
+</div>
+<div class="ui-g-12 ui-md-4">
+    <h3>Disable Days</h3>
+    <p-calendar [(ngModel)]="value" tabindex="0" [maxDate]="maxDateValue" [minDate]="minDateValue" readonlyInput="true" (onMonthChange)="onMonthChange($event)"></p-calendar> {{date|date}}
+</div>
+<p-calendar [(ngModel)]="date10">
+    <ng-template pTemplate="value" let-date>
+        <span [ngStyle]="{opacity: (date.day < 21 && date.day > 10) ? '.2' : 'inherit'}" style="border-radius:50%">{{date.day}}</span>
+    </ng-template>
+</p-calendar>
+
