@@ -28,7 +28,7 @@
     "core-js": "^2.5.4",
     "d3": "^5.5.0",
     "font-awesome": "^4.7.0",
-    "fullcalendar": "^4.0.0-alpha.2",
+    "fullcalendar": "^6.0.2",
     "highcharts": "^6.1.4",
     "nga-read-more": "0.0.1",
     "primeflex": "^1.0.0-rc.1",
